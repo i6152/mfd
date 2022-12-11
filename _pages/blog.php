@@ -1,5 +1,6 @@
 <?php /*print_r($_REQUEST)*/ ?>
 <div class="container" style="font-size: .8rem">
+    <?php var_dump('sayfa yolu göster :)'); ?>
     <h1>
         Blog sayfası...
     </h1>

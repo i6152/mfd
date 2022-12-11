@@ -71,10 +71,6 @@ $score=$sureSayac->bitir(5);
             }
         }
 
-
-     
-        
-
         /**
          * burası 
          * _db/sayfaIcerigi.php
@@ -84,6 +80,7 @@ $score=$sureSayac->bitir(5);
             include($componentList['sayfaDetay']['dosya']);
         }
         else{
+            var_dump('sayfa yolu göster :)');
             sayfa404(false, ['baslik'=>'Aradığınız sayfa hazır değildir.', 'mesaj'=>'aradığınız sayfa menüde tanımlı fakat sayfa içeriği hazır değildir.']);
         }
         ?>
