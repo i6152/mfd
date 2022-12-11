@@ -18,7 +18,7 @@ _components dizini sayfa içi component'leri oluşturduğumuz kısım. hata sayf
 
 _db/ -> localde bir db mantığı ile çalışıyor ve her sayfanın kendisine ait bir php sayfası vardır bunun içinde fgc, curl, db, dizi işlemleri yapabilir ve response dönebilirsiniz. burayı sadece _defined.php sayfasında kullandım ama farklı sayfalarda da kullanabilirsiniz...
 * _db/sayfaIcerigi.php -> burada bir sayfanın main sayfasını tanımlıyoruz ve istenirse sayfalara özel alanlar açılıp çağrılabilir. ek olarak header, footer vs. için bir id tutup temaların dışında ekstra alanlar çağrılabilir.
-
+* _db/temalar.php -> burada temalar oluşturup id ler ile _components/[**]/index.php lerdeki id leri bağlıyoruz. 
 
 _pages/ -> burası main kısmında çağrılacak kod sayfası burada fn ve class dışı global içerikler kullanabilirsiniz, veya detay anasayfa gibi kontroller yapıp sayfa içeriğini çalıştırabilirsiniz, dilerseniz anasayfada subMenu çalıştırıldı onu bu kısımda çalıştırabilirsiniz...
 
@@ -60,6 +60,9 @@ Yeni Sayfa Oluşturmak İçin
 *** muhtemelen ben doğrusu muhtemelen mi muhtemelemen mi diye düşünürken siz sayfayı oluşturup çalıştırmışsınızdır :)) ***
  
 
+Not: projede sadece hakkimizda ve blog sayfası hazırlanmıştır. 
 
 
 Not: _components/subMenu -> ilk başta sayfa içi sağ sol küçük menü tarzı düşünülüp oluşturuldu fakat sonradan esnekliğini göstermek için footer newsletter çevirdim... buraya dilerseniz menu.php den bir newsletter parametresi yollayıp istediğiniz sayfada gösterip istediğiniz sayfada gizleyebilirsiniz.
+
+Not: cms kolaylığını görmek için _db/temalar.php den header=> [1 || 2] şeklinde değiştirip iki farklı header çalışmasını görebilirsiniz dosyalar _components/header/[1=>ornek.php, 2=>demo.php] olarak ayarlanmıştır...
