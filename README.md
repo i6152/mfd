@@ -57,6 +57,7 @@ Yeni Sayfa Oluşturmak İçin
 * _db/sayfaIcerigi.php -> sayfanın main alanını ayarla ve diğer custom içerikleri tanımlayabilirsin. şu anda customlar çalışmıyor ama ayarlanması kullanım kolaylığı sağlayacaktır. bu alanlar temanın dışına çıkmanızı sağlayacaktır.
 ** _db/sayfaIcerigi.php > $list['dosya'] -> bu alana yazılan dosya isminde dosya oluşturup orada tasarım ve içeriklerinizi yapabilirsiniz...
 * sonrası _defined.php üzerinde otomatik olarak oluşmaktadır belki sayfa içeriğine göre müdahale etmeniz gerekebilir.
+* _db/seo.php -> seo içeriklerini oluşturmak için oluşturuldu. sayfa id'sine göre diziye yeni eleman ekler iseniz otomatik çekecektir.
 *** muhtemelen ben doğrusu muhtemelen mi muhtemelemen mi diye düşünürken siz sayfayı oluşturup çalıştırmışsınızdır :)) ***
  
 
