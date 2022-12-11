@@ -1,5 +1,5 @@
 <?php
-function demoHeader(){
+function ornekHeader(){
     global $score;
     global $arrMenu, $base_url;
     global $mevcutSayfa;
@@ -15,7 +15,7 @@ function demoHeader(){
             font-weight: 600;
         }
     </style>
-    <header class="header py-1 bg-warning">
+    <header class="header py-1 bg-danger">
         <div class="container d-flex justify-content-between">
 
                 <div class="my-3">
@@ -29,14 +29,14 @@ function demoHeader(){
                         $dilUrl='dil='.strtolower($vrDil);
                         $dilUrl=(strpos($_SERVER["REQUEST_URI"], '?'))?'?'.explode('?', $_SERVER["REQUEST_URI"])[1].'&'.$dilUrl:'?'.$dilUrl;
                         
-                        ?><a class="btn btn-info text-white font-bold m-2 <?php if($dilEkle==$vrDil) echo 'disabled' ?>" href="<?php echo $dilUrl ?>"><?php echo strtoupper($vrDil) ?></a><?php
+                        ?><a class="btn btn-primary text-white font-bold m-2 <?php if($dilEkle==$vrDil) echo 'disabled' ?>" href="<?php echo $dilUrl ?>"><?php echo strtoupper($vrDil) ?></a><?php
                     }
                     ?>
                 </div>
         </div>
     </header>
 
-    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="https://www.ismetozdemir.com.tr" target="_blank">w/ io.com.tr</a>
 

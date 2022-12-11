@@ -1,4 +1,5 @@
 <?php
+$defaultTemaID=1;
 
 $arrMenu = [
     [
@@ -6,24 +7,25 @@ $arrMenu = [
         'baslik' => 'Anasayfa',
         'link' => '',
         'sub' => null,
-        'lang' => 'tr'
+        'lang' => 'tr',
     ],
     [
         'id' => 2,
         'baslik' => 'Hakkımızda',
         'link' => 'hakkimizda',
+        'embedList'=>['css'=>[
+                $base_url.'assets/css/hakkimizda.css',
+                $base_url.'assets/css/hakkimizda.min.css'
+            ], 'js'=>[
+                $base_url.'assets/js/hakkimizda.js',
+                $base_url.'assets/js/hakkimizda.min.js'
+            ]
+        ],
         'sub' => null,
         'lang' => 'tr',
+        //burada istersen sayfaya özel bir tema id tut ve ona göre istek at...
         'template' => [
-            'tema' => [
-                # _db/temalar.php -> den eşleştir burada sadece id tt
-                'id' => 1,
-                'dizin' => '',
-                'title' => '_db/temalar.php -> den eşleştir burada sadece id tut'
-            ],
-            'custom'=>[
-                //... header, footer, vs özel bir id varsa öncelikli çalışacak...
-            ]
+            'tema' => ($arrTema[$defaultTemaID] ? $arrTema[$defaultTemaID] : []),
         ]
     ],
     [
@@ -31,8 +33,25 @@ $arrMenu = [
         'baslik' => 'Blog',
         'link' => 'blog',
         'detay' => 'detayId',
+        //detaySeoTitle, detaySeoDescription => db'den veya diziden gelen elemanlardan hangisini titlede kullanmak istediğini yazmalısın
+        'detaySeoTitle'=>'title',
+        'detaySeoDescription'=>'body',
+        'dbPage'=>'_db/blogListDb.php',
+        'dbListFn'=>'blogListCek',
+        'dbDetayFn'=>'blogDetayCek',
+        'embedList'=>['css'=>[
+                $base_url.'assets/css/blog.css',
+                $base_url.'assets/css/blog.min.css'
+            ], 'js'=>[
+                $base_url.'assets/js/blog.js',
+                $base_url.'assets/js/blog.min.js'
+            ]
+        ],
         'sub' => null,
-        'lang' => 'tr'
+        'lang' => 'tr',
+        'template' => [
+            'tema' => ($arrTema[$defaultTemaID] ? $arrTema[$defaultTemaID] : []),
+        ]
     ],
     [
         'id' => 4,
